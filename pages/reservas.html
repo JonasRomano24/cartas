@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas | Las Cartas</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+
+    <!-- CSS unificado -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+            <div class="container">
+                <a class="navbar-brand fs-3 fw-bold text-gradient" href="../index.html">Las Cartas</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="las-cartas.html">Las Cartas</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="reservas.html">Reservas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="quienes_somos.html">Quiénes Somos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="streaming.html">Streaming</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <h1>Encontra esa respuesta que buscabas</h1>
+    </header>
+
+    <!-- MAIN -->
+    <main class="flex-grow-1 container my-5">
+        <h2 class="text-gradient text-center mb-4">Reservá tu tirada</h2>
+
+        <div class="reserva-container d-flex flex-wrap justify-content-center gap-4">
+
+            <!-- Formulario -->
+            <form class="formulario p-4 shadow-sm rounded flex-grow-1 box">
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Nombre:</label>
+                    <input type="text" id="Name" name="Nombre" class="form-control" placeholder="Escribe tu nombre">
+                </div>
+
+                <div class="mb-3">
+                    <label for="Apellido" class="form-label">Apellidos:</label>
+                    <input type="text" id="Apellido" name="Apellidos" class="form-control"
+                        placeholder="Escribe ambos apellidos">
+                </div>
+
+                <div class="mb-3">
+                    <label for="Edad" class="form-label">Fecha de nacimiento:</label>
+                    <input type="date" id="Edad" name="Edad" class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <input type="email" id="email" name="Email" class="form-control" placeholder="Ingrese su correo.">
+                </div>
+
+                <div class="mb-4">
+                    <label for="pais" class="form-label">Seleccione su país:</label>
+                    <select name="pais" id="pais" class="form-select">
+                        <option value="">Seleccione un país...</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="México">México</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Perú">Perú</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary w-100">Enviar reserva</button>
+            </form>
+
+            <!-- Calendario -->
+            <div class="calendar-container p-4 shadow-sm rounded flex-grow-1 box">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <button id="prevMonth" class="btn btn-outline-light btn-sm">&lt;</button>
+                    <h4 id="monthYear" class="mb-0 text-gradient"></h4>
+                    <button id="nextMonth" class="btn btn-outline-light btn-sm">&gt;</button>
+                </div>
+
+                <table class="table table-bordered text-center align-middle mb-0 table-dark">
+                    <thead class="table-secondary">
+                        <tr>
+                            <th>Dom</th>
+                            <th>Lun</th>
+                            <th>Mar</th>
+                            <th>Mié</th>
+                            <th>Jue</th>
+                            <th>Vie</th>
+                            <th>Sáb</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-light text-center py-4 mt-auto">
+        <ul class="list-inline mb-2">
+            <li class="list-inline-item"><a href="#">Sobre mí</a></li>
+            <li class="list-inline-item"><a href="#">Contacto</a></li>
+            <li class="list-inline-item"><a href="#">Política de privacidad</a></li>
+        </ul>
+        <div class="d-flex justify-content-center mb-2 gap-3">
+            <a href="#"><img src="../assets/img/facebook.svg" alt="Facebook" width="24"></a>
+            <a href="#"><img src="../assets/img/twitter.svg" alt="Twitter" width="24"></a>
+            <a href="#"><img src="../assets/img/instagram.svg" alt="Instagram" width="24"></a>
+        </div>
+        <p class="small text-muted mb-0">&copy; 2025 Las Cartas. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const tbody = document.querySelector(".calendar-container tbody");
+            const monthYearDisplay = document.getElementById("monthYear");
+            const prevBtn = document.getElementById("prevMonth");
+            const nextBtn = document.getElementById("nextMonth");
+
+            let currentDate = new Date();
+
+            const events = [
+                { date: "2025-11-10", title: "Lectura de tarot privada", description: "Sesión personalizada", time: "18:00 hs" },
+                { date: "2025-11-15", title: "Sesión en vivo streaming", description: "Transmisión en directo", time: "21:30 hs" },
+                { date: "2025-11-25", title: "Tirada grupal especial", description: "Sesión colectiva", time: "20:00 hs" },
+                { date: "2025-12-01", title: "Inicio nuevo ciclo", description: "Comienzo del mes", time: "19:00 hs" }
+            ];
+
+            const monthNames = [
+                "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+                "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+            ];
+
+            function renderCalendar(date) {
+                const year = date.getFullYear();
+                const month = date.getMonth();
+                monthYearDisplay.textContent = `${monthNames[month]} ${year}`;
+                tbody.innerHTML = "";
+
+                const firstDay = new Date(year, month, 1).getDay();
+                const daysInMonth = new Date(year, month + 1, 0).getDate();
+                let day = 1;
+
+                for (let i = 0; i < 6; i++) {
+                    const row = document.createElement("tr");
+                    for (let j = 0; j < 7; j++) {
+                        const cell = document.createElement("td");
+
+                        if (i === 0 && j < firstDay) cell.textContent = "";
+                        else if (day > daysInMonth) cell.textContent = "";
+                        else {
+                            cell.textContent = day;
+
+                            const eventDateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+                            const event = events.find(e => e.date === eventDateStr);
+
+                            const today = new Date();
+                            if (day === today.getDate() && month === today.getMonth() && year === today.getFullYear()) {
+                                cell.style.border = "2px solid #ffeb3b";
+                            }
+
+                            if (event) {
+                                cell.style.backgroundColor = "#6a1b9a";
+                                cell.style.color = "#fff";
+                                cell.style.cursor = "pointer";
+                                cell.style.borderRadius = "6px";
+
+                                cell.addEventListener("click", () => {
+                                    alert(`${event.title}\n${event.description}\n${eventDateStr} — ${event.time}`);
+                                });
+                            }
+
+                            day++;
+                        }
+                        row.appendChild(cell);
+                    }
+                    tbody.appendChild(row);
+                }
+            }
+
+            prevBtn.addEventListener("click", () => { currentDate.setMonth(currentDate.getMonth() - 1); renderCalendar(currentDate); });
+            nextBtn.addEventListener("click", () => { currentDate.setMonth(currentDate.getMonth() + 1); renderCalendar(currentDate); });
+
+            renderCalendar(currentDate);
+        });
+    </script>
+</body>
+
+</html>

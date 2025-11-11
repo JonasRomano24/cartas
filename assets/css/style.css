@@ -1,0 +1,169 @@
+/* VARIABLES DE COLOR */
+:root {
+  --color-primary: #8e2de2;       /* morado intenso */
+  --color-secondary: #4a00e0;     /* morado oscuro */
+  --color-accent: #ffb347;        /* naranja suave para detalles */
+  --color-bg: #1b0033;            /* violeta oscuro místico */
+  --color-text: #f0f0f0;          /* texto claro sobre fondo oscuro */
+  --color-muted: #ccc;            /* texto secundario */
+}
+
+/* RESET Y BASE */
+body {
+  font-family: 'Kalnia Glaze', cursive;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* HEADER */
+.navbar {
+  background-color: rgba(0,0,0,0.6); /* transparente oscuro */
+}
+
+.nav-link.active {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* GRADIENTES EN TEXTOS */
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* CARRUSEL */
+.carousel-img {
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* SECCIONES PRINCIPALES */
+section {
+  padding: 60px 0;
+}
+
+/* BOX PRINCIPALES */
+.box {
+  background-color: rgba(0,0,0,0.5); /* fondo semi-transparente sobre violeta */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: var(--color-text);
+}
+
+/* CARDS DE CARTAS */
+.card.carta {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card.carta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* FORMULARIOS */
+.formulario {
+  max-width: 450px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+  color: var(--color-text);
+}
+
+.form-control,
+.form-select {
+  background-color: rgba(255,255,255,0.1);
+  color: var(--color-text);
+  border: 1px solid #444;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 5px rgba(255,179,71,0.5);
+  background-color: rgba(255,255,255,0.1);
+  color: var(--color-text);
+}
+
+/* BOTONES */
+.btn-primary {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+/* CALENDARIO */
+.calendar-container table td {
+  height: 60px;
+  vertical-align: middle;
+  color: var(--color-text);
+}
+
+.calendar-container table td:hover {
+  background-color: var(--color-accent);
+  color: #222;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* VIDEO STREAMING */
+.video-container video {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+/* FOOTER */
+footer {
+  background-color: rgba(0,0,0,0.6);
+  color: var(--color-muted);
+}
+
+footer a {
+  color: var(--color-muted);
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .formulario, .calendar-container {
+    flex: 1 1 100%;
+  }
+
+  .box {
+    margin-bottom: 20px;
+  }
+}
+
+
+h1{
+  text-align: center;
+}
