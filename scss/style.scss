@@ -1,0 +1,265 @@
+/* VARIABLES DE COLOR */
+:root {
+  --color-primary: #8e2de2;
+  /* morado intenso */
+  --color-secondary: #4a00e0;
+  /* morado oscuro */
+  --color-accent: #ffb347;
+  /* naranja suave para detalles */
+  --color-bg: #1b0033;
+  /* violeta oscuro místico */
+  --color-text: #f0f0f0;
+  /* texto claro sobre fondo oscuro */
+  --color-muted: #ccc;
+  /* texto secundario */
+}
+
+/* RESET Y BASE */
+body {
+  font-family: 'Kalnia Glaze', cursive;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* HEADER */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* transparente oscuro */
+}
+
+.nav-link.active {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+
+.navbar-brand {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+/* --- Texto blanco en menú hamburguesa (modo móvil) --- */
+@media (max-width: 992px) {
+  .navbar-nav .nav-link {
+    color: #fff !important;
+    /* Texto blanco */
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    color: var(--color-accent) !important;
+    /* Tu color de acento al pasar el mouse */
+  }
+
+  .navbar-collapse {
+    background-color: rgba(20, 0, 40, 0.9);
+    /* Fondo violeta oscuro semitransparente */
+    border-radius: 12px;
+    padding: 1rem;
+  }
+}
+
+
+/* GRADIENTES EN TEXTOS */
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* CARRUSEL */
+.carousel-img {
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* SECCIONES PRINCIPALES */
+section {
+  padding: 60px 0;
+}
+
+/* BOX PRINCIPALES */
+.box {
+  background-color: rgba(0, 0, 0, 0.5);
+  /* fondo semi-transparente sobre violeta */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: var(--color-text);
+}
+
+/* CARDS DE CARTAS */
+.card.carta {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card.carta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* FORMULARIOS */
+.formulario {
+  max-width: 450px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: var(--color-text);
+}
+
+.form-control,
+.form-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  border: 1px solid #444;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 5px rgba(255, 179, 71, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+/* BOTONES */
+.btn-primary {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  border: none;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+}
+
+/* CALENDARIO */
+.calendar-container table td {
+  height: 60px;
+  vertical-align: middle;
+  color: var(--color-text);
+}
+
+.calendar-container table td:hover {
+  background-color: var(--color-accent);
+  color: #222;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* VIDEO STREAMING */
+/* --- Streaming layout --- */
+.video-container video {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(123, 75, 255, 0.3);
+}
+
+/* Chat box */
+.chat-box {
+  background-color: rgba(30, 0, 50, 0.85);
+  border: 1px solid rgba(177, 140, 255, 0.3);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.chat-messages p {
+  margin: 5px 0;
+  background: rgba(177, 140, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+
+.chat-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.chat-input button {
+  background: linear-gradient(90deg, var(--color-accent-2), var(--color-accent));
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- Responsive: el chat pasa debajo del video --- */
+@media (max-width: 991px) {
+  .chat-box {
+    height: auto;
+    min-height: 300px;
+  }
+  .video-container video {
+    height: auto;
+  }
+}
+
+
+/* FOOTER */
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: var(--color-muted);
+}
+
+footer a {
+  color: var(--color-muted);
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+  .formulario,
+  .calendar-container {
+    flex: 1 1 100%;
+  }
+
+  .box {
+    margin-bottom: 20px;
+  }
+}
+
+
+h1 {
+  text-align: center;
+}
