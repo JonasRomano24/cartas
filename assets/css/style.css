@@ -1,3 +1,77 @@
 
+/* ================================
+   TIPOGRAFÍAS
+================================ */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lora:wght@400;600&display=swap');
 
-/*# sourceMappingURL=style.css.map */
+/* ================================
+   COLORES BASE
+================================ */
+:root {
+  --bg-main: #f5f2e9;
+  --bg-soft: #e9e4d8;
+  --card-bg: #e0cda2;
+
+  --gold-soft: #d3a84f;
+  --gold-dark: #b38a36;
+
+  --accent-green: #0f6f65;
+  --accent-blue: #386070;
+  --accent-red: #9c3f2d;
+
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   BODY
+================================ */
+body {
+  background-color: var(--bg-main);
+  color: #2a2a2a;
+  font-family: 'Lora', serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ================================
+   CONTENEDOR DE CARTAS
+================================ */
+.card-grid {
+  display: grid;
+  gap: 24px;
+  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+
+/* ================================
+   CARTAS
+================================ */
+.card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: all 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px var(--shadow-hover);
+}
+
+/* Imagen interna de carta */
+.card img {
+  width: 100%;
+  border-radius: 6px;
+  display: block;
+}
+
+/* ================================
+   TITULOS
+================================ */
+h1, h2, h3 {
+  font-family: 'Cinzel Decorative', serif;
+  color: var(--accent-green);
+  text-align: center;
+  margin-bottom: 20px;
+}
