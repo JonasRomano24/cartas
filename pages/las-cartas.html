@@ -72,19 +72,25 @@
         const totalCartas = 78;
 
         for (let i = 1; i <= totalCartas; i++) {
+
+            const numero = String(i).padStart(2, "0"); // <-- Clave
+
             const card = document.createElement("div");
             card.className = "col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center";
+
             card.innerHTML = `
-        <div class="card carta shadow-sm text-center border-0">
-          <img src="../assets/img/0${i}.jpg" class="card-img-top" alt="Carta ${i}">
-          <div class="card-body p-2">
-            <p class="card-text mb-0">Carta ${i}</p>
-          </div>
-        </div>
-      `;
+            <div class="card carta shadow-sm text-center border-0">
+                <img src="../assets/img/${numero}.jpg" class="card-img-top" alt="Carta ${i}">
+                <div class="card-body p-2">
+                    <p class="card-text mb-0">Carta ${i}</p>
+                </div>
+            </div>
+        `;
+
             album.appendChild(card);
         }
     </script>
+
 </body>
 
 </html>
