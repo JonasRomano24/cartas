@@ -1,0 +1,32 @@
+@use"bases/variables";
+
+/* RESET Y BASE */
+body {
+  font-family: 'Kalnia Glaze', cursive;
+  background-color: $color-bg;
+  color: $color-text;
+  margin: 0;
+  padding: 0;
+
+  a {
+    color: $color-text;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* SECCIONES PRINCIPALES */
+section {
+  padding: 60px 0;
+}
+
+/* BOX PRINCIPALES */
+.box {
+  background-color: rgba(0, 0, 0, 0.5); // fondo semi-transparente sobre violeta
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: $color-text;
+}

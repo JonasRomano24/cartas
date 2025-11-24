@@ -1,0 +1,11 @@
+@use"bases/variables";
+/* BOTONES */
+.btn-primary {
+  background: linear-gradient(90deg, $color-secondary, $color-primary);
+  border: none;
+  color: #fff;
+
+  &:hover {
+    background: linear-gradient(90deg, $color-primary, $color-secondary);
+  }
+}
