@@ -1,3 +1,5 @@
+@use "../bases/variables";
+
 .text-gradient {
   background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
   

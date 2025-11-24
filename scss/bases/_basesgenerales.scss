@@ -1,15 +1,15 @@
-
+@use "../bases/variables";
 
 /* RESET Y BASE */
 body {
   font-family: 'Kalnia Glaze', cursive;
-  background-color: $color-bg;
-  color: $color-text;
+  background-color: variables.$color-bg;
+  color: variables.$color-text;
   margin: 0;
   padding: 0;
 
   a {
-    color: $color-text;
+    color: variables.$color-text;
     text-decoration: none;
 
     &:hover {
@@ -25,8 +25,8 @@ section {
 
 /* BOX PRINCIPALES */
 .box {
-  background-color: rgba(0, 0, 0, 0.5); // fondo semi-transparente sobre violeta
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  color: $color-text;
+  color: variables.$color-text;
 }
