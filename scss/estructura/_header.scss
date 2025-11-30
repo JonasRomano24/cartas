@@ -1,0 +1,39 @@
+@use "../bases/variables";
+
+/* HEADER */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6); // transparente oscuro
+
+  .navbar-brand {
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .nav-link {
+    &.active {
+      color: var(--color-accent) !important;
+      font-weight: 600;
+    }
+  }
+
+  /* --- Texto blanco en menú hamburguesa (modo móvil) --- */
+  @media (max-width: 992px) {
+    .navbar-nav {
+
+      .nav-link {
+  color: variables.$color-text !important;
+
+        &:hover,
+        &:focus {
+          color: var(--color-accent) !important; // color acento
+        }
+      }
+    }
+
+    .navbar-collapse {
+      background-color: rgba(20, 0, 40, 0.9); // violeta oscuro semitransparente
+      border-radius: 12px;
+      padding: 1rem;
+    }
+  }
+}

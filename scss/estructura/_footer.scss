@@ -1,0 +1,18 @@
+@use "../bases/variables";
+
+
+/* FOOTER */
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: variables.$color-text;
+
+
+  a {
+    color: variables.$color-text;
+
+
+    &:hover {
+      color: var(--color-accent);
+    }
+  }
+}

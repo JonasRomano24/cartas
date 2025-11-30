@@ -1,0 +1,17 @@
+/* CALENDARIO */
+.calendar-container {
+  table {
+    td {
+      height: 60px;
+      vertical-align: middle;
+      color: var(--color-text);
+
+      &:hover {
+        background-color: var(--color-accent);
+        color: #222;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .formulario,
+  .calendar-container {
+    flex: 1 1 100%;
+  }
+
+  .box {
+    margin-bottom: 20px;
+  }
+}
+
+/* TÍTULOS */
+h1 {
+  text-align: center;
+}

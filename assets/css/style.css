@@ -1,77 +1,221 @@
-
-/* ================================
-   TIPOGRAFÍAS
-================================ */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Lora:wght@400;600&display=swap');
-
-/* ================================
-   COLORES BASE
-================================ */
-:root {
-  --bg-main: #f5f2e9;
-  --bg-soft: #e9e4d8;
-  --card-bg: #e0cda2;
-
-  --gold-soft: #d3a84f;
-  --gold-dark: #b38a36;
-
-  --accent-green: #0f6f65;
-  --accent-blue: #386070;
-  --accent-red: #9c3f2d;
-
-  --shadow-light: rgba(0, 0, 0, 0.08);
-  --shadow-hover: rgba(0, 0, 0, 0.15);
-}
-
-/* ================================
-   BODY
-================================ */
+@charset "UTF-8";
+/* RESET Y BASE */
 body {
-  background-color: var(--bg-main);
-  color: #2a2a2a;
-  font-family: 'Lora', serif;
-  line-height: 1.5;
+  font-family: "Kalnia Glaze", cursive;
+  background-color: #4b0588;
+  color: #ffe8b6;
   margin: 0;
+  padding: 0;
+}
+body a {
+  color: #ffe8b6;
+  text-decoration: none;
+}
+body a:hover {
+  text-decoration: underline;
 }
 
-/* ================================
-   CONTENEDOR DE CARTAS
-================================ */
-.card-grid {
-  display: grid;
-  gap: 24px;
-  padding: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+/* SECCIONES PRINCIPALES */
+section {
+  padding: 60px 0;
 }
 
-/* ================================
-   CARTAS
-================================ */
-.card {
-  background-color: var(--card-bg);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px var(--shadow-light);
-  transition: all 0.25s ease;
+/* BOX PRINCIPALES */
+.box {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: #ffe8b6;
 }
 
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 18px var(--shadow-hover);
+/* BOTONES */
+.btn-primary {
+  background: linear-gradient(90deg, #61e29b, #a64bf5);
+  border: none;
+  color: #fff;
+}
+.btn-primary:hover {
+  background: linear-gradient(90deg, #a64bf5, #61e29b);
 }
 
-/* Imagen interna de carta */
-.card img {
-  width: 100%;
+/* CALENDARIO */
+.calendar-container table td {
+  height: 60px;
+  vertical-align: middle;
+  color: var(--color-text);
+}
+.calendar-container table td:hover {
+  background-color: var(--color-accent);
+  color: #222;
+  cursor: pointer;
   border-radius: 6px;
-  display: block;
 }
 
-/* ================================
-   TITULOS
-================================ */
-h1, h2, h3 {
-  font-family: 'Cinzel Decorative', serif;
-  color: var(--accent-green);
-  text-align: center;
-  margin-bottom: 20px;
+/* CARDS DE CARTAS */
+.card.carta {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
+.card.carta:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* CARRUSEL */
+.carousel-img {
+  max-height: 500px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Chat box */
+.chat-box {
+  background-color: rgba(30, 0, 50, 0.85);
+  border: 1px solid rgba(177, 140, 255, 0.3);
+  color: #ffe8b6;
+  display: flex;
+  flex-direction: column;
+  height: 450px;
+}
+.chat-box .chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  padding: 10px;
+}
+.chat-box .chat-messages p {
+  margin: 5px 0;
+  background: rgba(177, 140, 255, 0.1);
+  padding: 6px 10px;
+  border-radius: 10px;
+}
+.chat-box .chat-input {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+.chat-box .chat-input input {
+  flex: 1;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffe8b6;
+}
+.chat-box .chat-input button {
+  background: linear-gradient(90deg, var(--color-accent-2), var(--color-accent));
+  border: none;
+  border-radius: 8px;
+  color: #ffe8b6;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* --- Responsive: el chat pasa debajo del video --- */
+@media (max-width: 991px) {
+  .chat-box {
+    height: auto;
+    min-height: 300px;
+  }
+  .video-container video {
+    height: auto;
+  }
+}
+/* FOOTER */
+footer {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffe8b6;
+}
+footer a {
+  color: #ffe8b6;
+}
+footer a:hover {
+  color: var(--color-accent);
+}
+
+/* FORMULARIOS */
+.formulario {
+  max-width: 450px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  color: var(--color-text);
+}
+
+.form-control,
+.form-select {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+  border: 1px solid #444;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 5px rgba(255, 179, 71, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--color-text);
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: bold;
+}
+
+/* HEADER */
+.navbar {
+  background-color: rgba(0, 0, 0, 0.6);
+  /* --- Texto blanco en menú hamburguesa (modo móvil) --- */
+}
+.navbar .navbar-brand {
+  font-weight: 700;
+  color: var(--color-accent);
+}
+.navbar .nav-link.active {
+  color: var(--color-accent) !important;
+  font-weight: 600;
+}
+@media (max-width: 992px) {
+  .navbar .navbar-nav .nav-link {
+    color: #ffe8b6 !important;
+  }
+  .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link:focus {
+    color: var(--color-accent) !important;
+  }
+  .navbar .navbar-collapse {
+    background-color: rgba(20, 0, 40, 0.9);
+    border-radius: 12px;
+    padding: 1rem;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .formulario,
+  .calendar-container {
+    flex: 1 1 100%;
+  }
+  .box {
+    margin-bottom: 20px;
+  }
+}
+/* TÍTULOS */
+h1 {
+  text-align: center;
+}
+
+/* VIDEO STREAMING */
+/* --- Streaming layout --- */
+.video-container video {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(123, 75, 255, 0.3);
+}/*# sourceMappingURL=style.css.map */
