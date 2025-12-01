@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             const row = document.createElement("tr");
             for (let j = 0; j < 7; j++) {
                 const cell = document.createElement("td");
-
                 if (i === 0 && j < firstDay) cell.textContent = "";
                 else if (day > daysInMonth) cell.textContent = "";
                 else {

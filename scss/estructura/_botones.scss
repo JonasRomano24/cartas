@@ -1,0 +1,18 @@
+@use "../principales/variables" as *;
+
+
+// ------------------------
+// BOTONES
+// ------------------------
+.btn-primary {
+    background: linear-gradient(90deg, $color-accent1, $color-accent2);
+    border: none;
+    color: #fff;
+    transition: 0.3s ease;
+
+    &:hover {
+        background: linear-gradient(90deg, $color-accent2, $color-accent1);
+    }
+}
+
+

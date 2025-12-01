@@ -1,0 +1,12 @@
+@use "variables" as *;
+
+// ------------------------
+// GRADIENT TEXT
+// ------------------------
+.text-gradient {
+    background: linear-gradient(90deg, $color-accent3, $color-accent2);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}

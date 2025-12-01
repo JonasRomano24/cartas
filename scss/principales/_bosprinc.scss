@@ -1,0 +1,11 @@
+@use "variables" as *;
+// ------------------------
+// BOX PRINCIPALES
+// ------------------------
+.box {
+    background-color: $color-box-bg;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: $color-text;
+    padding: 1.5rem;
+}

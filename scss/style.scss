@@ -1,18 +1,17 @@
-@use"bases/variables";
-@use"bases/basesgenerales";
-@use"bases/botones";
-@use"contenidos/calendario";
-@use"contenidos/cardscartas";
-@use"contenidos/carrusel";
-@use"contenidos/chat";
-@use"estructura/footer";
-@use"contenidos/formularios";
-@use"bases/gradientestext";
-@use"estructura/header";
-@use"estructura/responsive";
-@use"contenidos/video";
-
-
+@use "principales/variables";
+@use "principales/resetybase";
+@use "principales/bosprinc";
+@use "principales/gradienttext";
+@use "estructura/botones";
+@use "estructura/navbar";
+@use "estructura/modal";
+@use "estructura/fotter";
+@use "estructura/responsive";
+@use "contenido/calendario";
+@use "contenido/cartas";
+@use "contenido/chat";
+@use "contenido/formularios";
+@use "contenido/video";
 
 
 

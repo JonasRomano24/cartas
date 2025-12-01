@@ -1,0 +1,27 @@
+@use "../principales/variables" as *;
+
+// ------------------------
+// MODAL
+// ------------------------
+.modal-content {
+    background-color: rgba(30, 0, 50, 0.95);
+    border-radius: 12px;
+    border: 1px solid $color-accent2;
+    color: $color-text;
+}
+
+.modal-content img {
+    border-radius: 12px;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.modal-title {
+    color: $color-accent3;
+    font-weight: bold;
+}
+
+.modal-body p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}

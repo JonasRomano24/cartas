@@ -1,0 +1,44 @@
+@use "../principales/variables" as *;
+
+// ------------------------
+// NAVBAR
+// ------------------------
+.navbar {
+    background-color: #2e0055 !important; // violeta oscuro místico
+}
+
+.navbar .navbar-brand {
+    font-weight: 700;
+    color: $color-accent3;
+}
+
+.navbar .nav-link {
+    color: $color-text !important;
+
+    &.active {
+        color: $color-accent3 !important;
+        font-weight: 600;
+    }
+
+    &:hover {
+        color: $color-accent3 !important;
+    }
+}
+
+// menú móvil
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        color: $color-text !important;
+
+        &:hover,
+        &:focus {
+            color: $color-accent3 !important;
+        }
+    }
+
+    .navbar-collapse {
+        background-color: rgba(20, 0, 40, 0.9);
+        border-radius: 12px;
+        padding: 1rem;
+    }
+}

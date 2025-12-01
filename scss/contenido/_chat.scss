@@ -1,0 +1,65 @@
+@use "../principales/variables" as *;
+
+// ------------------------
+// CHAT
+// ------------------------
+.chat-box {
+    background-color: $color-chat-bg;
+    border: 1px solid rgba($color-accent2, 0.3);
+    color: $color-text;
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.chat-box .chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.chat-box .chat-messages p {
+    margin: 5px 0;
+    background: rgba($color-accent2, 0.15);
+    padding: 6px 10px;
+    border-radius: 10px;
+}
+
+.chat-box .chat-input {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.chat-box .chat-input input {
+    flex: 1;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $color-text;
+
+    &:focus {
+        outline: 2px solid $color-accent2;
+    }
+}
+
+.chat-box .chat-input button {
+    background: linear-gradient(90deg, #ffcc33, #ffb347);
+    border: none;
+    border-radius: 8px;
+    color: #222;
+    padding: 8px 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+
+    &:hover {
+        opacity: 0.85;
+        transform: scale(1.03);
+    }
+}

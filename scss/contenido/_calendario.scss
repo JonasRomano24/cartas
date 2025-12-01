@@ -1,0 +1,23 @@
+@use "../principales/variables" as *;
+
+// ------------------------
+// CALENDARIO
+// ------------------------
+.calendar-container table {
+    width: 100%;
+}
+
+.calendar-container table td {
+    height: 60px;
+    vertical-align: middle;
+    color: $color-text;
+    transition: 0.2s ease;
+    text-align: center;
+
+    &:hover {
+        background-color: $color-accent3;
+        color: #222;
+        cursor: pointer;
+        border-radius: 6px;
+    }
+}

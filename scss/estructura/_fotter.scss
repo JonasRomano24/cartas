@@ -1,0 +1,22 @@
+@use "../principales/variables" as *;
+
+// ------------------------
+// FOOTER
+// ------------------------
+footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: $color-text;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px solid rgba($color-accent2, 0.4);
+}
+
+footer a {
+    color: $color-text;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: $color-accent3;
+    }
+}

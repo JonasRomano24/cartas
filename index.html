@@ -5,33 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inicio | Las Cartas</title>
 
-  <!-- Bootstrap -->
+  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kalnia+Glaze:wght@100..700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
 
   <!-- CSS unificado -->
   <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 
   <!-- HEADER -->
   <header>
-    <nav class="navbar navbar-expand-lg navbar-light shadow-sm" id="menu">
+    <nav class="navbar navbar-expand-lg shadow-sm">
       <div class="container">
-        <a class="navbar-brand fs-3 fw-bold text-gradient" href="index.html">Las Cartas</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand fs-3 text-gradient" href="index.html">Las Cartas</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/las-cartas.html">Las Cartas</a></li>
             <li class="nav-item"><a class="nav-link" href="pages/reservas.html">Reservas</a></li>
@@ -41,75 +40,64 @@
         </div>
       </div>
     </nav>
-    <h1>Encontra esa respuesta que buscabas</h1>
   </header>
 
-  <!-- MAIN -->
+  <!-- CONTENIDO -->
   <main class="flex-grow-1">
-
-    <!-- CARRUSEL -->
-    <section class="container-fluid p-0 mb-5">
-      <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active" data-bs-interval="4000">
-            <img src="assets/img/carta.jpg" class="d-block w-100 carousel-img" alt="Carta 1">
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="assets/img/carta.jpg" class="d-block w-100 carousel-img" alt="Carta 2">
-          </div>
-          <div class="carousel-item" data-bs-interval="4000">
-            <img src="assets/img/carta.jpg" class="d-block w-100 carousel-img" alt="Carta 3">
+    <section>
+      <div class="container">
+        <div class="row justify-content-center mb-5">
+          <div class="col-lg-8">
+            <div class="box text-center">
+              <h1 class="mb-3 text-gradient">Bienvenid@ a Las Cartas</h1>
+              <p class="mb-4">
+                Un espacio místico donde el Tarot se convierte en guía, reflejo y compañía.
+              </p>
+              <a href="pages/reservas.html" class="btn btn-primary btn-lg">Reservar una lectura</a>
+            </div>
           </div>
         </div>
 
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-          data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-          <span class="visually-hidden">Anterior</span>
-        </button>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="box h-100">
+              <h2 class="h4 mb-3">Explora las 78 cartas</h2>
+              <p>Conoce cada arcano y conecta con su energía en la galería completa del Tarot Rider-Waite.</p>
+              <a href="pages/las-cartas.html" class="btn btn-primary mt-3">Ver galería</a>
+            </div>
+          </div>
 
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-          data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-          <span class="visually-hidden">Siguiente</span>
-        </button>
-      </div>
-    </section>
+          <div class="col-md-4">
+            <div class="box h-100">
+              <h2 class="h4 mb-3">Reservas</h2>
+              <p>Agenda una sesión personalizada de lectura para recibir claridad y orientación.</p>
+              <a href="pages/reservas.html" class="btn btn-primary mt-3">Ir a reservas</a>
+            </div>
+          </div>
 
-    <!-- SECCIONES PRINCIPALES -->
-    <section class="container my-5">
-      <div class="row g-4 justify-content-center text-center">
-        <div class="col-md-5 col-11 box p-4">
-          <h2 class="text-gradient">Descubre tu destino</h2>
-          <p>Explora el Tarot Rider Waite y las energías que te acompañan. Cada carta es una puerta hacia tu
-            autoconocimiento.</p>
-        </div>
-
-        <div class="col-md-5 col-11 box p-4">
-          <h2 class="text-gradient">Aprende sobre las cartas</h2>
-          <p>Conoce el significado de cada arcano y cómo interpretar las señales del universo a través de su simbolismo.
-          </p>
+          <div class="col-md-4">
+            <div class="box h-100">
+              <h2 class="h4 mb-3">Streaming en vivo</h2>
+              <p>Conecta en directo, participa en tiradas grupales y vive la experiencia en comunidad.</p>
+              <a href="pages/streaming.html" class="btn btn-primary mt-3">Ver streaming</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
-  <footer class="bg-light text-center py-4 mt-auto">
-    <ul class="list-inline mb-2">
-      <li class="list-inline-item"><a href="#sobre-mi">Sobre mí</a></li>
-      <li class="list-inline-item"><a href="#contacto">Contacto</a></li>
-      <li class="list-inline-item"><a href="#privacidad">Política de privacidad</a></li>
-    </ul>
-    <div class="d-flex justify-content-center mb-2 gap-3">
-      <a href="#"><img src="assets/img/facebook.svg" alt="Facebook" width="24"></a>
-      <a href="#"><img src="assets/img/twitter.svg" alt="Twitter" width="24"></a>
-      <a href="#"><img src="assets/img/instagram.svg" alt="Instagram" width="24"></a>
+  <footer>
+    <div class="container">
+      <p class="mb-0">&copy; <span id="year"></span> Las Cartas - Todos los derechos reservados.</p>
     </div>
-    <p class="small text-muted mb-0">&copy; 2025 Las Cartas. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
