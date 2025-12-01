@@ -1,20 +1,26 @@
 // ------------------------
 // VIDEO STREAMING
 // ------------------------
-.video-container video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* llena sin deformar */
-    border-radius: 12px;
+.video-container {
+    height: 450px; // puedes ajustar
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // llena sin deformar
+        border-radius: 12px;
+    }
 }
-.video-container,
+
+// Chat-box comparte altura, así que lo incluimos en el mismo grupo
 .chat-box {
-    height: 450px; /* puedes ajustar */
+    height: 450px; // puedes ajustar
 }
 
 @media (max-width: 992px) {
+
     .video-container,
     .chat-box {
-        height: auto; /* en móvil se apilan */
+        height: auto; // en móvil se apilan
     }
 }

@@ -3,27 +3,29 @@
 // ------------------------
 // GALERÍA DE CARTAS
 // ------------------------
-.card.carta {
-    border: none;
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.3);
-}
+.card {
+    &.carta {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: rgba(0, 0, 0, 0.3);
 
-.card.carta:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-}
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+        }
 
-.card.carta img {
-    width: 100%;
-    display: block;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+        img {
+            width: 100%;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-.card.carta img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba($color-accent2, 0.7);
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba($color-accent2, 0.7);
+            }
+        }
+    }
 }
