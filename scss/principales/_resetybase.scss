@@ -1,4 +1,7 @@
+@use "mixins" as *;
 @use "variables" as *;
+
+
 
 // RESET Y BASE
 * {
@@ -30,6 +33,7 @@ h3,
 h4,
 h5,
 h6 {
+    @include texto-gradiente($color-accent1, $color-accent2);
     font-family: $font-primary;
     color: $color-text;
 }
