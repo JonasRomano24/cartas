@@ -1,0 +1,74 @@
+// ======================================================
+// ANIMACIONES GLOBALES DEL SITIO
+// ======================================================
+
+
+// ------------------------------------------------------
+// 1) ANIMACIÓN GENERAL AL CARGAR LA PÁGINA
+// ------------------------------------------------------
+body {
+    opacity: 0;
+    animation: fadeInPage .9s ease forwards;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+// ------------------------------------------------------
+// 2) ANIMACIÓN SUAVE PARA TODAS LAS SECCIONES
+// ------------------------------------------------------
+section {
+    opacity: 0;
+    animation: fadeInSection 1s ease forwards;
+    animation-delay: 0.15s;
+}
+
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+// ------------------------------------------------------
+// 3) ANIMACIONES PARA TARJETAS Y ELEMENTOS DE GRID
+// ------------------------------------------------------
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInItem {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

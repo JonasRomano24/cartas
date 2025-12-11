@@ -1,27 +1,95 @@
 @use "../principales/variables" as *;
 
 // ------------------------
-// CALENDARIO
+// CALENDARIO MÍSTICO
 // ------------------------
 .calendar-container {
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    color: $color-text;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 
     table {
         width: 100%;
+        border-collapse: separate;
+        border-spacing: 8px;
 
         td {
             height: 60px;
-            vertical-align: middle;
-            color: $color-text;
-            transition: 0.2s ease;
-            text-align: center;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, .05);
+            transition: .3s ease;
+            cursor: pointer;
 
             &:hover {
-                background-color: $color-accent3;
+                background: $color-accent3;
                 color: #222;
-                cursor: pointer;
-                border-radius: 6px;
+                transform: translateY(-4px);
+                box-shadow: 0 6px 14px rgba(0, 0, 0, .4);
+            }
+
+            &.bloqueado {
+                background: rgba(255, 0, 0, .25);
+                opacity: .35;
+                cursor: not-allowed;
+                box-shadow: none;
+                transform: none;
+            }
+
+            &.active-day {
+                background: linear-gradient(90deg, $color-accent1, $color-accent2);
+                color: #222;
+                font-weight: bold;
+                box-shadow: 0 0 12px rgba($color-accent1, .65);
             }
         }
     }
+}
 
+// HORARIOS
+#horarios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: .7rem;
+
+    .hora-btn {
+        padding: .6rem 1.2rem;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, .12);
+        cursor: pointer;
+        transition: .25s ease;
+
+        &:hover {
+            background: linear-gradient(90deg, $color-accent1, $color-accent2);
+            color: #222;
+        }
+
+        &.selected {
+            background: linear-gradient(90deg, $color-accent1, $color-accent2);
+            color: #222;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba($color-accent1, .7);
+        }
+    }
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 992px) {
+    .calendar-container {
+        padding: 2.3rem;
+
+        table td {
+            height: 58px;
+            font-size: 1rem;
+        }
+
+        #horarios .hora-btn {
+            padding: .7rem 1.3rem;
+            font-size: 1.05rem;
+        }
+    }
 }

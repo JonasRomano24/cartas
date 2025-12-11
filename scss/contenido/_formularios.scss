@@ -4,33 +4,56 @@
 // FORMULARIOS
 // ------------------------
 .formulario {
-    max-width: 450px;
+    max-width: 500px;
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
+    padding: 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     color: $color-text;
 
-    // Inputs
+    h2 {
+        margin-bottom: 1.2rem;
+    }
+
     .form-control,
-    .form-select {
+    .form-select,
+    textarea {
         background-color: rgba(255, 255, 255, 0.1);
         color: $color-text;
         border: 1px solid #444;
+        padding: .9rem 1rem;
+        border-radius: 8px;
+        font-size: 1rem;
 
         &:focus {
             border-color: $color-accent2;
-            box-shadow: 0 0 5px rgba($color-accent3, 0.5);
-            background-color: rgba(255, 255, 255, 0.1);
-            color: $color-text;
+            box-shadow: 0 0 8px rgba($color-accent3, .5);
+            background-color: rgba(255, 255, 255, 0.15);
         }
+    }
+
+    button {
+        padding: 1rem;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
     }
 }
 
-// Título con gradiente (si lo usás dentro de cualquier parte)
-.text-gradient {
-    background: linear-gradient(90deg, $color-accent2, $color-accent1);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    font-weight: bold;
+/* TABLET */
+@media (min-width: 768px) and (max-width: 992px) {
+    .formulario {
+        padding: 2.3rem;
+
+        .form-control,
+        .form-select,
+        textarea {
+            padding: 1rem;
+            font-size: 1.07rem;
+        }
+
+        button {
+            padding: 1rem;
+            font-size: 1.15rem;
+        }
+    }
 }

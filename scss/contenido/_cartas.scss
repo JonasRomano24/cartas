@@ -1,36 +1,32 @@
-@use "../principales/mixins" as *;
-@use "../principales/variables" as *;
+.carta {
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.35);
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s ease;
 
-// ------------------------
-// GALERÍA DE CARTAS
-// ------------------------
-.card {
-    &.carta {
-        @include carta-base;
-        @include sombra-mistica($color-accent2);
-
-        border: none;
-        border-radius: 12px;
-        overflow: hidden;
-        cursor: pointer;
-        background-color: rgba(0, 0, 0, 0.3);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-        &:hover {
-            transform: translateY(-8px);
-            @include sombra-mistica($color-accent2, 0.9);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-        }
-
-        img {
-            width: 100%;
-            display: block;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-
-            &:hover {
-                transform: scale(1.05);
-                box-shadow: 0 0 20px rgba($color-accent2, 0.7);
-            }
-        }
+    img {
+        width: 100%;
+        aspect-ratio: 3 / 5;
+        object-fit: cover;
+        border-radius: 12px 12px 0 0;
+        transition: .3s;
     }
+
+    &:hover {
+        transform: translateY(-8px) scale(1.03);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+    }
+
+    p {
+        color: #ffe8b6;
+        font-size: .95rem;
+        margin-top: .4rem;
+    }
+}
+
+#tiradaResultado .carta {
+    max-width: 200px;
+    margin: auto;
 }

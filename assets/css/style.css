@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -33,7 +34,7 @@ h6 {
 }
 
 main {
-  flex: 1 0 auto;
+  width: 100%;
 }
 
 section {
@@ -42,11 +43,10 @@ section {
 }
 
 .box {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  color: #f2d18b;
-  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .text-gradient {
@@ -72,10 +72,12 @@ section {
 }
 .navbar .navbar-brand {
   font-weight: 700;
-  color: #ffb347;
+  color: #ffb347 !important;
+  transition: color 0.3s ease;
 }
 .navbar .nav-link {
   color: #f2d18b !important;
+  transition: color 0.3s ease;
 }
 .navbar .nav-link.active {
   color: #ffb347 !important;
@@ -85,17 +87,33 @@ section {
   color: #ffb347 !important;
 }
 @media (max-width: 992px) {
-  .navbar .navbar-nav .nav-link {
-    color: #f2d18b !important;
-  }
-  .navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .nav-link:focus {
-    color: #ffb347 !important;
-  }
   .navbar .navbar-collapse {
     background-color: rgba(20, 0, 40, 0.9);
     border-radius: 12px;
     padding: 1rem;
   }
+  .navbar .nav-link {
+    color: #f2d18b !important;
+  }
+  .navbar .nav-link:hover, .navbar .nav-link:focus {
+    color: #ffb347 !important;
+  }
+}
+
+.navbar-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-dark .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+header,
+.navbar {
+  position: relative;
+  z-index: 10000;
+  /* más alto que el modal */
 }
 
 .modal-content {
@@ -144,49 +162,115 @@ footer a:hover {
     margin-bottom: 20px;
   }
 }
+.calendar-container {
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.45);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  color: #f2d18b;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
 .calendar-container table {
   width: 100%;
+  border-collapse: separate;
+  border-spacing: 8px;
 }
 .calendar-container table td {
   height: 60px;
-  vertical-align: middle;
-  color: #f2d18b;
-  transition: 0.2s ease;
-  text-align: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: 0.3s ease;
+  cursor: pointer;
 }
 .calendar-container table td:hover {
-  background-color: #ffb347;
+  background: #ffb347;
   color: #222;
-  cursor: pointer;
-  border-radius: 6px;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+.calendar-container table td.bloqueado {
+  background: rgba(255, 0, 0, 0.25);
+  opacity: 0.35;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+.calendar-container table td.active-day {
+  background: linear-gradient(90deg, #61e29b, #a64bf5);
+  color: #222;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(97, 226, 155, 0.65);
 }
 
-.card.carta {
-  border-radius: 12px;
-  overflow: hidden;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 15px rgba(166, 75, 245, 0.6);
+#horarios {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
+}
+#horarios .hora-btn {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+#horarios .hora-btn:hover {
+  background: linear-gradient(90deg, #61e29b, #a64bf5);
+  color: #222;
+}
+#horarios .hora-btn.selected {
+  background: linear-gradient(90deg, #61e29b, #a64bf5);
+  color: #222;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(97, 226, 155, 0.7);
+}
+
+/* TABLET */
+@media (min-width: 768px) and (max-width: 992px) {
+  .calendar-container {
+    padding: 2.3rem;
+  }
+  .calendar-container table td {
+    height: 58px;
+    font-size: 1rem;
+  }
+  .calendar-container #horarios .hora-btn {
+    padding: 0.7rem 1.3rem;
+    font-size: 1.05rem;
+  }
+}
+.carta {
   border: none;
   border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.35);
   overflow: hidden;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s ease;
 }
-.card.carta:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 15px rgba(166, 75, 245, 0.9);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
-}
-.card.carta img {
+.carta img {
   width: 100%;
-  display: block;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  aspect-ratio: 3/5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  transition: 0.3s;
 }
-.card.carta img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(166, 75, 245, 0.7);
+.carta:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+}
+.carta p {
+  color: #ffe8b6;
+  font-size: 0.95rem;
+  margin-top: 0.4rem;
+}
+
+#tiradaResultado .carta {
+  max-width: 200px;
+  margin: auto;
 }
 
 .chat-box {
@@ -244,34 +328,55 @@ footer a:hover {
 }
 
 .formulario {
-  max-width: 450px;
+  max-width: 500px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 12px;
+  padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   color: #f2d18b;
 }
+.formulario h2 {
+  margin-bottom: 1.2rem;
+}
 .formulario .form-control,
-.formulario .form-select {
+.formulario .form-select,
+.formulario textarea {
   background-color: rgba(255, 255, 255, 0.1);
   color: #f2d18b;
   border: 1px solid #444;
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
 }
 .formulario .form-control:focus,
-.formulario .form-select:focus {
+.formulario .form-select:focus,
+.formulario textarea:focus {
   border-color: #a64bf5;
-  box-shadow: 0 0 5px rgba(255, 179, 71, 0.5);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #f2d18b;
+  box-shadow: 0 0 8px rgba(255, 179, 71, 0.5);
+  background-color: rgba(255, 255, 255, 0.15);
+}
+.formulario button {
+  padding: 1rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
 }
 
-.text-gradient {
-  background: linear-gradient(90deg, #a64bf5, #61e29b);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-weight: bold;
+/* TABLET */
+@media (min-width: 768px) and (max-width: 992px) {
+  .formulario {
+    padding: 2.3rem;
+  }
+  .formulario .form-control,
+  .formulario .form-select,
+  .formulario textarea {
+    padding: 1rem;
+    font-size: 1.07rem;
+  }
+  .formulario button {
+    padding: 1rem;
+    font-size: 1.15rem;
+  }
 }
-
 .video-container {
   height: 450px;
 }
@@ -291,5 +396,284 @@ footer a:hover {
   .video-container,
   .chat-box {
     height: auto;
+  }
+}
+body {
+  opacity: 0;
+  animation: fadeInPage 0.9s ease forwards;
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+section {
+  opacity: 0;
+  animation: fadeInSection 1s ease forwards;
+  animation-delay: 0.15s;
+}
+
+@keyframes fadeInSection {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInGrid {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInItem {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================================================
+   MODAL MÍSTICO VIOLETA + HUMO MÁGICO (SCSS ANIDADO)
+=========================================================== */
+.mystic-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 0, 40, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 9999;
+  /* Activación con :target */
+  /* Evita que el modal invisible bloquee clics */
+  /* Contenedor del modal */
+  /* Botón cerrar */
+}
+.mystic-modal:target {
+  opacity: 1;
+  pointer-events: auto;
+}
+.mystic-modal:not(:target) {
+  pointer-events: none !important;
+  opacity: 0 !important;
+}
+.mystic-modal .modal-content {
+  position: relative;
+  background: radial-gradient(circle at top, #6e1a9a, #2e004d);
+  padding: 2.5rem 2rem;
+  width: min(90%, 550px);
+  border-radius: 18px;
+  color: #ffe8b6;
+  box-shadow: 0 0 30px rgba(255, 215, 160, 0.25);
+  animation: modalPop 0.45s ease forwards;
+  overflow: hidden;
+  /* Humo místico */
+}
+.mystic-modal .modal-content h2,
+.mystic-modal .modal-content p,
+.mystic-modal .modal-content .close-modal {
+  position: relative;
+  z-index: 2;
+}
+.mystic-modal .modal-content .magic-smoke {
+  position: absolute;
+  inset: 0;
+  background: url("https://i.imgur.com/8B0GkGQ.png") center/cover no-repeat;
+  opacity: 0.35;
+  filter: blur(5px);
+  animation: smokeMove 14s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+.mystic-modal .close-modal {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 2.3rem;
+  text-decoration: none;
+  color: #ffdca7;
+  z-index: 3;
+  transition: 0.3s ease;
+}
+.mystic-modal .close-modal:hover {
+  transform: scale(1.15);
+  color: #fff6d4;
+}
+
+/* Animación pop del modal */
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+/* Animación humo */
+@keyframes smokeMove {
+  0% {
+    transform: translate(-35px, -20px) scale(1.05);
+  }
+  50% {
+    transform: translate(20px, 25px) scale(1.12);
+  }
+  100% {
+    transform: translate(-15px, 30px) scale(1.05);
+  }
+}
+/* ===========================================================
+   TARJETAS EN MODO GRID (ANIDADO)
+=========================================================== */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  animation: fadeInGrid 0.8s ease forwards;
+}
+.grid-cards .item {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  color: #ffe8b6;
+  text-decoration: none;
+}
+.grid-cards .item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 215, 160, 0.5);
+}
+.grid-cards .item h3 {
+  font-family: "Marcellus", serif;
+  margin-bottom: 1rem;
+}
+.grid-cards .item p {
+  color: #e8d7b3;
+  line-height: 1.6;
+}
+
+/* Fade-in grid */
+@keyframes fadeInGrid {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================================================
+   CAJAS MÍSTICAS PARA SECCIONES SUPERIORES (NO MODALES)
+=========================================================== */
+.mystic-box {
+  background: rgba(0, 0, 0, 0.45);
+  padding: 2rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  color: #ffe8b6;
+  text-align: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  z-index: 5;
+}
+.mystic-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 215, 160, 0.5);
+}
+.mystic-box h2 {
+  font-family: "Marcellus", serif;
+  margin-bottom: 1rem;
+  color: #ffe8b6;
+}
+.mystic-box p {
+  color: #e8d7b3;
+  line-height: 1.6;
+}
+
+/* Hero box (no debe comportarse como tarjetas) */
+.hero-box {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Contenedor del carrusel */
+.mystical-carousel {
+  border: 3px solid #a64bf5;
+  /* violeta místico */
+  border-radius: 18px;
+  box-shadow: 0 0 25px rgba(162, 79, 245, 0.6), 0 0 45px rgba(255, 215, 130, 0.3);
+  /* brillo místico dorado */
+  overflow: hidden;
+}
+
+/* Cada slide */
+.carousel-item {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fondo difuminado */
+.carousel-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  filter: blur(22px) brightness(0.55);
+  transform: scale(1.25);
+  /* evita ver bordes del blur */
+  z-index: 1;
+}
+
+/* Imagen principal centrada y completa */
+.carousel-img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: 0 auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  /* NO recorta la imagen vertical */
+  height: 200px;
+  /* celular */
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .carousel-img {
+    height: 280px;
+  }
+}
+/* PC */
+@media (min-width: 1200px) {
+  .carousel-img {
+    height: 350px;
   }
 }/*# sourceMappingURL=style.css.map */

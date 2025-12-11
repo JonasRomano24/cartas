@@ -8,11 +8,13 @@
 
     .navbar-brand {
         font-weight: 700;
-        color: $color-accent3;
+        color: $color-accent3 !important;
+        transition: color 0.3s ease;
     }
 
     .nav-link {
         color: $color-text !important;
+        transition: color 0.3s ease;
 
         &.active {
             color: $color-accent3 !important;
@@ -24,23 +26,43 @@
         }
     }
 
-    // menú móvil
+    // --- Menú móvil ---
     @media (max-width: 992px) {
-        .navbar-nav {
-            .nav-link {
-                color: $color-text !important;
-
-                &:hover,
-                &:focus {
-                    color: $color-accent3 !important;
-                }
-            }
-        }
-
         .navbar-collapse {
             background-color: rgba(20, 0, 40, 0.9);
             border-radius: 12px;
             padding: 1rem;
         }
+
+        .nav-link {
+            color: $color-text !important;
+
+            &:hover,
+            &:focus {
+                color: $color-accent3 !important;
+            }
+        }
     }
+}
+
+// ------------------------
+// NAVBAR - NAV ITEMS
+// ------------------------
+.navbar-nav {
+    display: flex;
+    gap: 1rem;
+}
+
+// ------------------------
+// ICONO HAMBURGUESA BLANCO
+// ------------------------
+.navbar-dark .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+header,
+.navbar {
+    position: relative;
+    z-index: 10000;
+    /* más alto que el modal */
 }

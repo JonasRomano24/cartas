@@ -1,0 +1,199 @@
+/* ===========================================================
+   MODAL MÍSTICO VIOLETA + HUMO MÁGICO (SCSS ANIDADO)
+=========================================================== */
+
+.mystic-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 0, 40, 0.85);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    z-index: 9999;
+
+    /* Activación con :target */
+    &:target {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Evita que el modal invisible bloquee clics */
+    &:not(:target) {
+        pointer-events: none !important;
+        opacity: 0 !important;
+    }
+
+    /* Contenedor del modal */
+    .modal-content {
+        position: relative;
+        background: radial-gradient(circle at top, #6e1a9a, #2e004d);
+        padding: 2.5rem 2rem;
+        width: min(90%, 550px);
+        border-radius: 18px;
+        color: #ffe8b6;
+        box-shadow: 0 0 30px rgba(255, 215, 160, 0.25);
+        animation: modalPop .45s ease forwards;
+        overflow: hidden;
+
+        h2,
+        p,
+        .close-modal {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Humo místico */
+        .magic-smoke {
+            position: absolute;
+            inset: 0;
+            background: url("https://i.imgur.com/8B0GkGQ.png") center/cover no-repeat;
+            opacity: 0.35;
+            filter: blur(5px);
+            animation: smokeMove 14s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+    }
+
+    /* Botón cerrar */
+    .close-modal {
+        position: absolute;
+        top: 10px;
+        right: 16px;
+        font-size: 2.3rem;
+        text-decoration: none;
+        color: #ffdca7;
+        z-index: 3;
+        transition: .3s ease;
+
+        &:hover {
+            transform: scale(1.15);
+            color: #fff6d4;
+        }
+    }
+}
+
+/* Animación pop del modal */
+@keyframes modalPop {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Animación humo */
+@keyframes smokeMove {
+    0% {
+        transform: translate(-35px, -20px) scale(1.05);
+    }
+
+    50% {
+        transform: translate(20px, 25px) scale(1.12);
+    }
+
+    100% {
+        transform: translate(-15px, 30px) scale(1.05);
+    }
+}
+
+
+/* ===========================================================
+   TARJETAS EN MODO GRID (ANIDADO)
+=========================================================== */
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    animation: fadeInGrid 0.8s ease forwards;
+
+    .item {
+        background: rgba(0, 0, 0, 0.45);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(6px);
+        transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+        color: #ffe8b6;
+        text-decoration: none;
+
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+            border-color: rgba(255, 215, 160, 0.5);
+        }
+
+        h3 {
+            font-family: 'Marcellus', serif;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            color: #e8d7b3;
+            line-height: 1.6;
+        }
+    }
+}
+
+/* Fade-in grid */
+@keyframes fadeInGrid {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ===========================================================
+   CAJAS MÍSTICAS PARA SECCIONES SUPERIORES (NO MODALES)
+=========================================================== */
+
+.mystic-box {
+    background: rgba(0, 0, 0, 0.45);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(6px);
+    color: #ffe8b6;
+    text-align: center;
+    transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+    position: relative;
+    z-index: 5;
+
+    &:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        border-color: rgba(255, 215, 160, 0.5);
+    }
+
+    h2 {
+        font-family: 'Marcellus', serif;
+        margin-bottom: 1rem;
+        color: #ffe8b6;
+    }
+
+    p {
+        color: #e8d7b3;
+        line-height: 1.6;
+    }
+}
+
+/* Hero box (no debe comportarse como tarjetas) */
+.hero-box {
+    text-align: center;
+    padding: 2rem;
+}

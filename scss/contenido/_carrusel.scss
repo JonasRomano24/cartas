@@ -1,0 +1,54 @@
+/* Contenedor del carrusel */
+.mystical-carousel {
+    border: 3px solid #a64bf5;
+    /* violeta místico */
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(162, 79, 245, 0.6),
+        0 0 45px rgba(255, 215, 130, 0.3);
+    /* brillo místico dorado */
+    overflow: hidden;
+}
+
+/* Cada slide */
+.carousel-item {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fondo difuminado */
+.carousel-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(22px) brightness(0.55);
+    transform: scale(1.25);
+    /* evita ver bordes del blur */
+    z-index: 1;
+}
+
+/* Imagen principal centrada y completa */
+.carousel-img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+    /* NO recorta la imagen vertical */
+    height: 200px;
+    /* celular */
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .carousel-img {
+        height: 280px;
+    }
+}
+
+/* PC */
+@media (min-width: 1200px) {
+    .carousel-img {
+        height: 350px;
+    }
+}

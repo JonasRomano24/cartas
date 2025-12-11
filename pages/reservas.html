@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservas | Las Cartas</title>
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Google Fonts -->
@@ -14,64 +14,76 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
 
-    <!-- CSS unificado -->
+    <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 
     <!-- HEADER -->
-    <header>
-        <nav class="navbar navbar-expand-lg shadow-sm">
+    <header class="shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-dark py-3" style="background-color: rgba(0,0,0,0.6);">
             <div class="container">
-                <a class="navbar-brand fs-3 text-gradient" href="../index.html">Las Cartas</a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"
-                    aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand fs-3 fw-bold text-gradient" href="../index.html">
+                    Las Cartas
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+                    aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="menu">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="las-cartas.html">Las Cartas</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="reservas.html">Reservas</a></li>
-                        <li class="nav-item"><a class="nav-link" href="quienes_somos.html">Quiénes Somos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="streaming.html">Streaming</a></li>
+                <div class="collapse navbar-collapse" id="menuNav">
+                    <ul class="navbar-nav ms-auto gap-2">
+                        <li><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li><a class="nav-link" href="./las-cartas.html">Las Cartas</a></li>
+                        <li><a class="nav-link active" href="./reservas.html">Reservas</a></li>
+                        <li><a class="nav-link" href="./quienes_somos.html">Quiénes Somos</a></li>
+                        <li><a class="nav-link" href="./streaming.html">Streaming</a></li>
                     </ul>
                 </div>
+
             </div>
         </nav>
     </header>
+
 
     <!-- CONTENIDO -->
     <main class="flex-grow-1">
         <section>
             <div class="container">
+
                 <div class="text-center mb-5">
                     <h1 class="text-gradient">Reservas</h1>
                     <p>Elegí el día y horario para tu lectura de Tarot.</p>
                 </div>
 
                 <div class="row g-4 justify-content-center align-items-start">
+
+                    <!-- FORMULARIO -->
                     <div class="col-lg-5">
-                        <div class="formulario mx-auto">
+                        <div class="formulario">
+
                             <h2 class="h4 mb-3">Datos de la sesión</h2>
-                            <form>
+
+                            <form id="formReserva">
+                                <input type="hidden" id="diaSeleccionado" name="diaSeleccionado">
+                                <input type="hidden" id="horaSeleccionada" name="horaSeleccionada">
+
                                 <div class="mb-3">
-                                    <label for="nombre" class="form-label">Nombre completo</label>
-                                    <input type="text" id="nombre" class="form-control" placeholder="Tu nombre">
+                                    <label class="form-label">Nombre completo</label>
+                                    <input type="text" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Correo electrónico</label>
-                                    <input type="email" id="email" class="form-control"
-                                        placeholder="tucorreo@example.com">
+                                    <label class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" required>
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="tipo" class="form-label">Tipo de lectura</label>
-                                    <select id="tipo" class="form-select">
+                                    <label class="form-label">Tipo de lectura</label>
+                                    <select class="form-select" required>
                                         <option value="">Seleccionar...</option>
                                         <option>Tirada general</option>
                                         <option>Amor y vínculos</option>
@@ -81,78 +93,59 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="comentarios" class="form-label">Comentario opcional</label>
-                                    <textarea id="comentarios" rows="3" class="form-control"
-                                        placeholder="Algo que quieras compartir antes de la lectura"></textarea>
+                                    <label class="form-label">Horario seleccionado</label>
+                                    <input type="text" id="displayHora" class="form-control" disabled>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label class="form-label">Comentario opcional</label>
+                                    <textarea rows="3" class="form-control"></textarea>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary w-100 mt-2">Enviar reserva</button>
                             </form>
+
                         </div>
                     </div>
 
+                    <!-- CALENDARIO -->
                     <div class="col-lg-5">
-                        <div class="box calendar-container">
+                        <div class="calendar-container mystic-box">
+
                             <h2 class="h4 mb-3 text-center">Calendario</h2>
-                            <!-- Aquí iría tu calendario real o plugin -->
+
+                            <div class="calendar-header d-flex justify-content-between align-items-center mb-3">
+                                <button id="prevMonth" class="btn btn-primary btn-sm">←</button>
+                                <h3 id="calendarTitle" class="m-0"></h3>
+                                <button id="nextMonth" class="btn btn-primary btn-sm">→</button>
+                            </div>
+
                             <table class="table table-borderless text-center align-middle mb-0">
-                                <tbody>
+                                <thead>
                                     <tr>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>4</td>
-                                        <td>5</td>
-                                        <td>6</td>
-                                        <td>7</td>
+                                        <th>Lun</th>
+                                        <th>Mar</th>
+                                        <th>Mié</th>
+                                        <th>Jue</th>
+                                        <th>Vie</th>
+                                        <th>Sáb</th>
+                                        <th>Dom</th>
                                     </tr>
-                                    <tr>
-                                        <td>8</td>
-                                        <td>9</td>
-                                        <td>10</td>
-                                        <td>11</td>
-                                        <td>12</td>
-                                        <td>13</td>
-                                        <td>14</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15</td>
-                                        <td>16</td>
-                                        <td>17</td>
-                                        <td>18</td>
-                                        <td>19</td>
-                                        <td>20</td>
-                                        <td>21</td>
-                                    </tr>
-                                    <tr>
-                                        <td>22</td>
-                                        <td>23</td>
-                                        <td>24</td>
-                                        <td>25</td>
-                                        <td>26</td>
-                                        <td>27</td>
-                                        <td>28</td>
-                                    </tr>
-                                    <tr>
-                                        <td>29</td>
-                                        <td>30</td>
-                                        <td>31</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
+                                </thead>
+                                <tbody id="calendarBody"></tbody>
                             </table>
-                            <p class="mt-3 mb-0 small text-center">
-                                *Selecciona un día disponible y completa el formulario para coordinar horario.
-                            </p>
+
+                            <div id="horarios" class="mt-4 text-center"></div>
+
                         </div>
                     </div>
+
                 </div>
+
             </div>
         </section>
     </main>
+
 
     <!-- FOOTER -->
     <footer>
@@ -161,11 +154,16 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JS DEL CALENDARIO -->
+    <script src="../assets/js/calendario.js"></script>
+
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+
 </body>
 
 </html>

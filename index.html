@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,84 +21,273 @@
 <body class="d-flex flex-column min-vh-100">
 
   <!-- HEADER -->
-  <header>
-    <nav class="navbar navbar-expand-lg shadow-sm">
+  <header class="shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-dark py-3" style="background-color: rgba(0,0,0,0.6);">
       <div class="container">
-        <a class="navbar-brand fs-3 text-gradient" href="index.html">Las Cartas</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Toggle navigation">
+        <!-- LOGO -->
+        <a class="navbar-brand fs-3 fw-bold text-gradient" href="./index.html">
+          Las Cartas
+        </a>
+
+        <!-- BOTÓN HAMBURGUESA -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+          aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="menu">
-          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/las-cartas.html">Las Cartas</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/reservas.html">Reservas</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/quienes_somos.html">Quiénes Somos</a></li>
-            <li class="nav-item"><a class="nav-link" href="pages/streaming.html">Streaming</a></li>
+        <!-- MENÚ -->
+        <div class="collapse navbar-collapse" id="menuNav">
+          <ul class="navbar-nav ms-auto gap-2">
+
+            <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/las-cartas.html">Las Cartas</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/reservas.html">Reservas</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/quienes_somos.html">Quiénes Somos</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/streaming.html">Streaming</a></li>
+
           </ul>
         </div>
+
       </div>
     </nav>
   </header>
 
+
+
   <!-- CONTENIDO -->
   <main class="flex-grow-1">
+
+    <!-- HERO -->
     <section>
       <div class="container">
         <div class="row justify-content-center mb-5">
           <div class="col-lg-8">
-            <div class="box text-center">
+            <div class="hero-box text-center">
               <h1 class="mb-3 text-gradient">Bienvenid@ a Las Cartas</h1>
-              <p class="mb-4">
-                Un espacio místico donde el Tarot se convierte en guía, reflejo y compañía.
-              </p>
+              <p class="mb-4">Un espacio místico donde el Tarot se convierte en guía, reflejo y compañía.</p>
               <a href="pages/reservas.html" class="btn btn-primary btn-lg">Reservar una lectura</a>
             </div>
           </div>
         </div>
 
+        <!-- TRES TARJETAS PRINCIPALES -->
         <div class="row g-4">
           <div class="col-md-4">
-            <div class="box h-100">
+            <div class="mystic-box h-100">
               <h2 class="h4 mb-3">Explora las 78 cartas</h2>
-              <p>Conoce cada arcano y conecta con su energía en la galería completa del Tarot Rider-Waite.</p>
+              <p>Conoce cada arcano y conecta con su energía en la galería del Tarot Rider-Waite.</p>
               <a href="pages/las-cartas.html" class="btn btn-primary mt-3">Ver galería</a>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="box h-100">
+            <div class="mystic-box h-100">
               <h2 class="h4 mb-3">Reservas</h2>
-              <p>Agenda una sesión personalizada de lectura para recibir claridad y orientación.</p>
+              <p>Agenda una lectura personalizada para recibir claridad y orientación.</p>
               <a href="pages/reservas.html" class="btn btn-primary mt-3">Ir a reservas</a>
             </div>
           </div>
 
           <div class="col-md-4">
-            <div class="box h-100">
+            <div class="mystic-box h-100">
               <h2 class="h4 mb-3">Streaming en vivo</h2>
-              <p>Conecta en directo, participa en tiradas grupales y vive la experiencia en comunidad.</p>
+              <p>Conecta en directo y participa en tiradas grupales.</p>
               <a href="pages/streaming.html" class="btn btn-primary mt-3">Ver streaming</a>
             </div>
           </div>
         </div>
+
       </div>
     </section>
+
+    <!-- ============================================
+      CARROUSEL DE BOOSTRAP, CON ALGUNAS MODIFICACIONES ESTETICAS 
+      =============================================== -->
+    <div id="carouselCartas" class="carousel slide mystical-carousel" data-bs-ride="carousel">
+      <div class="carousel-inner">
+
+        <div class="carousel-item active">
+          <div class="carousel-bg" style="background-image: url('assets/img/carta1.jpg');"></div>
+          <img src="assets/img/carta1.jpg" class="carousel-img" alt="Carta 1">
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-bg" style="background-image: url('assets/img/carta2.jpg');"></div>
+          <img src="assets/img/carta2.jpg" class="carousel-img" alt="Carta 2">
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-bg" style="background-image: url('assets/img/carta3.jpg');"></div>
+          <img src="assets/img/carta3.jpg" class="carousel-img" alt="Carta 3">
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-bg" style="background-image: url('assets/img/carta4.jpg');"></div>
+          <img src="assets/img/carta4.jpg" class="carousel-img" alt="Carta 4">
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-bg" style="background-image: url('assets/img/carta5.jpg');"></div>
+          <img src="assets/img/carta5.jpg" class="carousel-img" alt="Carta 5">
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-bg" style="background-image: url('assets/img/carta6.jpg');"></div>
+          <img src="assets/img/carta6.jpg" class="carousel-img" alt="Carta 6">
+        </div>
+
+        <div class="carousel-item">
+          <div class="carousel-bg" style="background-image: url('assets/img/carta7.jpg');"></div>
+          <img src="assets/img/carta7.jpg" class="carousel-img" alt="Carta 7">
+        </div>
+
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselCartas" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselCartas" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <br>
+    <h2 class="text-center">El futuro esta en nuestra manos..</h2>
+
+
+    <!-- ============================================
+      TIRADA INTERACTIVA INTEGRADA AL INDEX
+      =============================================== -->
+    <section class="mt-5">
+      <div class="container">
+
+        <!-- TÍTULO -->
+        <div class="text-center mb-5">
+          <h2 class="text-gradient">Tirada Interactiva del Tarot</h2>
+          <p>Consultá el Tarot en tiempo real: una carta o Pasado–Presente–Futuro.</p>
+
+          <button id="btnCartaUnica" class="btn btn-primary m-2" type="button">
+            Tirada de 1 carta
+          </button>
+
+          <button id="btnPPF" class="btn btn-primary m-2" type="button">
+            Tirada Pasado - Presente - Futuro
+          </button>
+        </div>
+
+        <!-- RESULTADO VISUAL -->
+        <div id="tiradaResultado" class="row g-4 justify-content-center text-center"></div>
+
+        <!-- INTERPRETACIÓN IA -->
+        <div id="interpretacionIA" class="mt-4 text-center"></div>
+
+      </div>
+    </section>
+
+
+
+
+    <!-- GRID SOBRE EL TAROT -->
+    <section class="info-grid container my-5">
+      <h2 class="text-center mb-4">Sobre el Tarot</h2>
+
+      <div class="grid-cards">
+
+        <a href="#modal1" class="item modal-trigger">
+          <h3>¿Qué es el Tarot?</h3>
+          <p>Descubre el origen histórico del Tarot y su evolución espiritual.</p>
+        </a>
+
+        <a href="#modal2" class="item modal-trigger">
+          <h3>Estructura del Tarot</h3>
+          <p>Conoce cómo están formados los Arcanos Mayores y Menores.</p>
+        </a>
+
+        <a href="#modal3" class="item modal-trigger">
+          <h3>¿Para qué se usa hoy?</h3>
+          <p>Una herramienta moderna de introspección y claridad personal.</p>
+        </a>
+
+      </div>
+    </section>
+
+
+    <!-- MODAL 1 -->
+    <div id="modal1" class="mystic-modal">
+      <div class="modal-content">
+        <a href="#" class="close-modal">&times;</a>
+        <h2>¿Qué es el Tarot?</h2>
+        <p>El Tarot es un mazo de 78 cartas cuya existencia está documentada desde mediados del siglo XV en Europa,
+          especialmente en regiones como Italia y Francia. En sus orígenes, las cartas no estaban asociadas a lo
+          esotérico, sino que formaban parte de juegos de mesa populares entre la nobleza. No fue hasta el siglo XVIII
+          cuando comenzó a vincularse con prácticas de introspección simbólica y adivinación, gracias a autores como
+          Court de Gébelin, quien sugirió que las imágenes del Tarot contenían vestigios de sabiduría antigua. A lo
+          largo del tiempo, distintas corrientes espirituales adoptaron el Tarot como una herramienta para explorar el
+          inconsciente y comprender los procesos internos del ser humano, convirtiéndolo en una práctica cultural
+          ampliamente difundida en la actualidad</p>
+        <div class="magic-smoke"></div>
+      </div>
+    </div>
+
+
+    <!-- MODAL 2 -->
+    <div id="modal2" class="mystic-modal">
+      <div class="modal-content">
+        <a href="#" class="close-modal">&times;</a>
+        <h2>Estructura del Tarot</h2>
+        <p>El Tarot está compuesto por un total de 78 cartas que se dividen en dos grandes grupos: los Arcanos Mayores y
+          los Arcanos Menores. Los Arcanos Mayores son 22 cartas que representan arquetipos universales y fuerzas
+          simbólicas que influyen en distintos aspectos de la vida humana, desde la creatividad del Mago hasta las
+          transformaciones profundas de la Torre. Por otro lado, los Arcanos Menores suman 56 cartas agrupadas en cuatro
+          palos: Oros, Copas, Espadas y Bastos. Cada palo contiene diez cartas numeradas y cuatro figuras —Sota,
+          Caballero, Reina y Rey— que reflejan situaciones cotidianas, emociones, conflictos, decisiones y acciones.
+          Esta estructura permite interpretar el Tarot tanto desde un enfoque simbólico como psicológico, ofreciendo una
+          visión completa de los diferentes planos de la experiencia humana.</p>
+        <div class="magic-smoke"></div>
+      </div>
+    </div>
+
+
+    <!-- MODAL 3 -->
+    <div id="modal3" class="mystic-modal">
+      <div class="modal-content">
+        <a href="#" class="close-modal">&times;</a>
+        <h2>¿Para qué se usa el Tarot hoy?</h2>
+        <p>En la actualidad, el Tarot es utilizado principalmente como una herramienta de autoconocimiento, más que como
+          un método para predecir el futuro. Sus imágenes sirven como disparadores simbólicos que permiten explorar
+          emociones profundas, patrones inconscientes y perspectivas alternativas frente a situaciones de la vida.
+          Psicólogos influenciados por la teoría de los arquetipos de Carl Jung también lo emplean como recurso
+          proyectivo, ya que cada carta actúa como un espejo que refleja aspectos internos de la psique. Además, muchas
+          personas utilizan el Tarot para la meditación, la toma de decisiones, el desarrollo espiritual y la búsqueda
+          de claridad emocional. Aunque no garantiza certezas absolutas, sí ofrece un espacio de reflexión personal que
+          ayuda a comprender mejor los procesos internos y a avanzar con mayor conciencia.</p>
+        <div class="magic-smoke"></div>
+      </div>
+    </div>
+
+
   </main>
+
 
   <!-- FOOTER -->
   <footer>
     <div class="container">
-      <p class="mb-0">&copy; <span id="year"></span> Las Cartas - Todos los derechos reservados.</p>
+      <p class="mb-0">
+        &copy; <span id="year"></span> Las Cartas - Todos los derechos reservados.
+      </p>
     </div>
   </footer>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="assets/js/tarot.js"></script>
+
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
+
 </html>
