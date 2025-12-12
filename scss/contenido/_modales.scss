@@ -197,3 +197,45 @@
     text-align: center;
     padding: 2rem;
 }
+
+/* CONTENEDOR DEL MODAL */
+.mystic-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+}
+
+/* MODAL ACTIVO */
+.mystic-modal:target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CONTENIDO REAL */
+.mystic-modal .modal-content {
+    position: relative;
+    z-index: 3002;
+}
+
+/* EFECTOS VISUALES (humo, blur, etc.) */
+.mystic-modal .magic-smoke {
+    position: absolute;
+    inset: 0;
+    z-index: 3001;
+    pointer-events: none;
+    /* 🔑 CLAVE */
+}
+
+/* Asegurá que el botón de cierre sea clickeable */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 3003;
+    font-size: 2rem;
+    text-decoration: none;
+    color: #f2d18b;
+}

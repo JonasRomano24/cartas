@@ -3,11 +3,29 @@
 // ------------------------
 // BOTONES
 // ------------------------
+
+.btn {
+    transition:
+        background 0.35s ease,
+        color 0.35s ease,
+        box-shadow 0.35s ease,
+        transform 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+// Botón principal
 .btn-primary {
     background: linear-gradient(90deg, $color-accent1, $color-accent2);
     border: none;
     color: #fff;
-    transition: 0.3s ease;
 
     &:hover {
         background: linear-gradient(90deg, $color-accent2, $color-accent1);

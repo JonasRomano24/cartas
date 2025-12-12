@@ -123,6 +123,17 @@
             }
         });
     </script>
+    <script>
+        document.querySelectorAll('#menuNav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.getElementById('menuNav');
+                const bsCollapse = bootstrap.Collapse.getInstance(menu)
+                    || new bootstrap.Collapse(menu, { toggle: false });
+                bsCollapse.hide();
+            });
+        });
+    </script>
+
 </body>
 
 </html>

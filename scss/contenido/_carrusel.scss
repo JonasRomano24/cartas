@@ -1,18 +1,20 @@
-/* Contenedor del carrusel */
+/* ============================================
+   CAROUSEL MÍSTICO TAROT
+   ============================================ */
+
 .mystical-carousel {
-    border: 3px solid #a64bf5;
-    /* violeta místico */
-    border-radius: 18px;
-    box-shadow: 0 0 25px rgba(162, 79, 245, 0.6),
-        0 0 45px rgba(255, 215, 130, 0.3);
-    /* brillo místico dorado */
+    position: relative;
+    width: 100%;
     overflow: hidden;
+    border-top: 2px solid rgba(255, 215, 160, 0.4);
+    border-bottom: 2px solid rgba(255, 215, 160, 0.4);
+    box-shadow: 0 0 25px rgba(180, 120, 255, 0.35);
 }
 
-/* Cada slide */
-.carousel-item {
+/* ALTURA BASE (desktop) */
+.mystical-carousel .carousel-item {
     position: relative;
-    overflow: hidden;
+    height: 380px;
 }
 
 /* Fondo difuminado */
@@ -21,34 +23,48 @@
     inset: 0;
     background-size: cover;
     background-position: center;
-    filter: blur(22px) brightness(0.55);
-    transform: scale(1.25);
-    /* evita ver bordes del blur */
+    filter: blur(22px) brightness(0.6);
+    transform: scale(1.15);
     z-index: 1;
 }
 
-/* Imagen principal centrada y completa */
+/* Imagen principal */
 .carousel-img {
     position: relative;
     z-index: 2;
-    display: block;
-    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    max-width: 100%;
     object-fit: contain;
-    /* NO recorta la imagen vertical */
-    height: 200px;
-    /* celular */
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 0 18px rgba(0, 0, 0, 0.8));
 }
 
-/* Tablet */
-@media (min-width: 768px) {
-    .carousel-img {
-        height: 280px;
+/* Flechas */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 0 6px #000);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .mystical-carousel .carousel-item {
+        height: 300px;
     }
 }
 
-/* PC */
-@media (min-width: 1200px) {
-    .carousel-img {
-        height: 350px;
+/* Mobile */
+@media (max-width: 576px) {
+    .mystical-carousel .carousel-item {
+        height: 220px;
+    }
+
+    .carousel-bg {
+        filter: blur(26px) brightness(0.55);
     }
 }

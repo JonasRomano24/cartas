@@ -1,25 +1,30 @@
+/* VARIABLES Y BASE */
 @use "principales/variables";
 @use "principales/resetybase";
 @use "principales/bosprinc";
 @use "principales/gradienttext";
 @use "principales/mixins";
+@use "principales/animaciones";
+
+/* ESTRUCTURA GENERAL */
 @use "estructura/botones";
 @use "estructura/navbar";
-@use "estructura/modal";
 @use "estructura/fotter";
 @use "estructura/responsive";
+
+/* CONTENIDO */
 @use "contenido/calendario";
 @use "contenido/cartas";
 @use "contenido/chat";
 @use "contenido/formularios";
 @use "contenido/video";
-@use "principales/animaciones";
-@use "contenido/modales";
+
+/* CARRUSEL (debe ir ANTES de modales) */
 @use "contenido/carrusel";
 
-
-
-
+/* MODALES (DEBEN IR ÚLTIMO) */
+@use "estructura/modal";
+@use "contenido/modales";
 
 
 
