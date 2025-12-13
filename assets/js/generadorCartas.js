@@ -1,51 +1,86 @@
-const album = document.getElementById("album");
-
-// Buscar información según ID
-function getCartaInfo(id) {
-    return cartasInfo.find(c => c.id === id) || {
-        id,
-        nombre: "Carta " + id,
-        descripcion: "Interpretación próximamente disponible."
-    };
-}
-
-// Generar 78 cartas
-for (let i = 0; i < 78; i++) {
-
-    const id = i.toString().padStart(2, "0");
-    const info = getCartaInfo(id);
-
-    const col = document.createElement("div");
-    col.className = "col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center";
-
-    col.innerHTML = `
-        <div class="card carta shadow-sm text-center border-0" data-id="${id}">
-            <img src="../assets/img/${id}.jpg" alt="${info.nombre}: ${info.descripcion}">
-            <div class="card-body p-2">
-                <p class="card-text mb-0">${info.nombre}</p>
-            </div>
-        </div>
-    `;
-
-    album.appendChild(col);
-}
-
-
-// ---------- MODAL ----------
 document.addEventListener("DOMContentLoaded", () => {
+    const grid = document.getElementById("galeriaCartas");
+    if (!grid) {
+        console.error("No existe #galeriaCartas en el HTML");
+        return;
+    }
 
-    const modal = new bootstrap.Modal(document.getElementById("modalCarta"));
+    if (typeof cartasInfo === "undefined") {
+        console.error("cartasInfo no está definido. Revisá el orden de scripts.");
+        return;
+    }
 
-    document.getElementById("album").addEventListener("click", (e) => {
-        const carta = e.target.closest(".carta");
-        if (!carta) return;
+    const modalEl = document.getElementById("modalCarta");
+    if (!modalEl) {
+        console.error("No existe el modal con id=modalCarta en el HTML");
+        return;
+    }
 
-        const id = carta.dataset.id;
+    const modal = new bootstrap.Modal(modalEl);
+
+    function getCartaInfo(id) {
+        return cartasInfo.find(c => c.id === id) || {
+            id,
+            nombre: `Carta ${id}`,
+            descripcion: "Interpretación próximamente disponible."
+        };
+    }
+
+    // Render 78 cartas
+    const frag = document.createDocumentFragment();
+
+    for (let i = 0; i < 78; i++) {
+        const id = String(i).padStart(2, "0");
         const info = getCartaInfo(id);
 
-        document.getElementById("modalCartaTitulo").textContent = info.nombre;
-        document.getElementById("modalCartaImagen").src = `../assets/img/${id}.jpg`;
-        document.getElementById("modalCartaDescripcion").textContent = info.descripcion;
+        const col = document.createElement("div");
+        col.className = "col-6 col-sm-4 col-md-3 col-lg-2 d-flex justify-content-center";
+
+        col.innerHTML = `
+      <button
+        type="button"
+        class="card carta shadow-sm text-center border-0 h-100"
+        data-id="${id}"
+        style="background: transparent;"
+        aria-label="Abrir carta ${info.nombre}"
+      >
+        <img
+          src="../assets/img/${id}.jpg"
+          class="card-img-top"
+          alt="Carta del Tarot ${info.nombre}. Significado: ${info.descripcion}"
+        >
+        <div class="card-body p-2">
+          <h3 class="card-title h6 mb-0">${info.nombre}</h3>
+        </div>
+      </button>
+    `;
+
+        frag.appendChild(col);
+    }
+
+    grid.appendChild(frag);
+
+    // Click -> abrir modal
+    grid.addEventListener("click", (e) => {
+        const card = e.target.closest(".carta");
+        if (!card) return;
+
+        const id = card.dataset.id;
+        const info = getCartaInfo(id);
+
+        const titulo = document.getElementById("modalCartaTitulo");
+        const img = document.getElementById("modalCartaImagen");
+        const desc = document.getElementById("modalCartaDescripcion");
+
+        if (!titulo || !img || !desc) {
+            console.error("Faltan IDs del modal: modalCartaTitulo / modalCartaImagen / modalCartaDescripcion");
+            return;
+        }
+
+        titulo.textContent = info.nombre;
+        img.src = `../assets/img/${id}.jpg`;
+        img.alt = `Carta del Tarot ${info.nombre}. ${info.descripcion}`;
+        desc.textContent = info.descripcion;
 
         modal.show();
     });
