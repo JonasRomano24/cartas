@@ -38,23 +38,15 @@
 
                 <div class="collapse navbar-collapse" id="menuNav">
                     <ul class="navbar-nav ms-auto gap-2">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="./las-cartas.html">Las Cartas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./reservas.html">Reservas</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./quienes_somos.html">Quiénes Somos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./streaming.html">Streaming</a>
-                        </li>
+                        <li><a class="nav-link" href="../index.html">Inicio</a></li>
+                        <li><a class="nav-link active" href="las-cartas.html">Las Cartas</a></li>
+                        <li><a class="nav-link" href="tiradas.html">Tipo de tiradas</a></li>
+                        <li><a class="nav-link" href="reservas.html">Reservas</a></li>
+                        <li><a class="nav-link" href="quienes_somos.html">Quiénes Somos</a></li>
+                        <li><a class="nav-link" href="streaming.html">Streaming</a></li>
                     </ul>
                 </div>
+
 
             </div>
         </nav>
@@ -116,9 +108,13 @@
                 </div>
 
                 <div class="modal-body">
-                    <img id="modalCartaImagen" class="img-fluid mb-3" alt="">
+                    <picture id="modalCartaPicture">
+                        <source id="modalCartaSourceWebp" type="image/webp">
+                        <img id="modalCartaImagen" class="img-fluid mb-3" alt="">
+                    </picture>
                     <p id="modalCartaDescripcion"></p>
                 </div>
+
 
             </div>
         </div>
